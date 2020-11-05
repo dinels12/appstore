@@ -1,21 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import {
+  Provider as PaperProvider,
+  DefaultTheme as PaperDefaulthTheme,
+} from "react-native-paper";
+import {
+  NavigationContainer,
+  DefaultTheme as NavigationDefaultTheme,
+} from "@react-navigation/native";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import Main from "./src/Main";
+import merge from "deepmerge";
+
+const CombinedDarkTheme = merge(PaperDefaulthTheme, NavigationDefaultTheme);
+
+const client = new ApolloClient({
+  uri: "https://prototype-storeapp.herokuapp.com/graphql",
+  cache: new InMemoryCache(),
+});
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ApolloProvider client={client}>
+      <PaperProvider theme={CombinedDarkTheme}>
+        <NavigationContainer theme={CombinedDarkTheme}>
+          <Main />
+        </NavigationContainer>
+      </PaperProvider>
+    </ApolloProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
