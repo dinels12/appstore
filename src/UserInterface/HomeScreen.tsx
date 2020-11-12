@@ -1,19 +1,10 @@
 import * as React from "react";
-import { BottomNavigation, Text } from "react-native-paper";
-import { ActivityIndicator, Colors } from "react-native-paper";
+import { BottomNavigation } from "react-native-paper";
 import ProductsRoute from "../components/ProductsRoute";
-import ShopRoute from "../components/Shops";
+import ShopRoute from "../components/ShopsRoute";
+import ProfileRoute from "../components/ProfileRoute";
 
-const ProfileRoute = () => (
-  <ActivityIndicator
-    style={{ marginTop: "65%" }}
-    animating={true}
-    size='large'
-    color={Colors.red800}
-  />
-);
-
-const BottomNav = () => {
+const Dashboard = () => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     { key: "products", title: "Productos", icon: "food" },
@@ -36,8 +27,4 @@ const BottomNav = () => {
   );
 };
 
-const HomeScreen = () => {
-  return <BottomNav />;
-};
-
-export default HomeScreen;
+export default Dashboard;

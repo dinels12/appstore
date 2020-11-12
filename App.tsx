@@ -11,7 +11,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Main from "./src/Main";
 import merge from "deepmerge";
 
-const CombinedDarkTheme = merge(PaperDefaulthTheme, NavigationDefaultTheme);
+const Theme = merge(PaperDefaulthTheme, NavigationDefaultTheme);
 
 const client = new ApolloClient({
   uri: "https://prototype-storeapp.herokuapp.com/graphql",
@@ -21,8 +21,8 @@ const client = new ApolloClient({
 export default function App() {
   return (
     <ApolloProvider client={client}>
-      <PaperProvider theme={CombinedDarkTheme}>
-        <NavigationContainer theme={CombinedDarkTheme}>
+      <PaperProvider theme={Theme}>
+        <NavigationContainer theme={Theme}>
           <Main />
         </NavigationContainer>
       </PaperProvider>

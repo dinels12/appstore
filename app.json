@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "appstore",
-    "slug": "appstore",
-    "version": "1.0.0",
+    "name": "Near2You",
+    "slug": "N2U",
+    "version": "0.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -13,9 +13,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },

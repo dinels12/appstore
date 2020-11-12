@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ScrollView, View, Text } from "react-native";
-import { StyleSheet } from "react-native";
+import { ScrollView, View, Text, StyleSheet } from "react-native";
 import { gql, useQuery } from "@apollo/client";
 import { Button, Card, ActivityIndicator, Colors } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
@@ -38,6 +37,7 @@ interface CompanyInterface {
   maxProductActive: number;
   planPayDate: string;
 }
+
 interface Props {
   company: CompanyInterface;
   navigation: any;
