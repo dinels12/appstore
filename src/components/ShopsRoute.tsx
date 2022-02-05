@@ -91,7 +91,7 @@ const HomeScreen = () => {
     return (
       <ActivityIndicator
         style={{ marginTop: "65%" }}
-        size='large'
+        size="large"
         animating={true}
         color={Colors.red800}
       />

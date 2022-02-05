@@ -2,11 +2,11 @@ import React from "react";
 import { View } from "react-native";
 import { ActivityIndicator, Colors } from "react-native-paper";
 import { createStackNavigator } from "@react-navigation/stack";
+import AsyncStorage from "@react-native-community/async-storage";
 import { AuthContext } from "../components/context";
 import HomeScreen from "./UserInterface/HomeScreen";
 import ShopView from "./components/ShopView";
 import Auth from "./Auth/index";
-import AsyncStorage from "@react-native-community/async-storage";
 
 const Stack = createStackNavigator();
 
@@ -106,7 +106,7 @@ const Main = () => {
         <ActivityIndicator
           style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
           animating={true}
-          size='large'
+          size="large"
           color={Colors.red400}
         />
       </View>
@@ -116,13 +116,13 @@ const Main = () => {
   return (
     <AuthContext.Provider value={authContext}>
       {loginState.userToken ? (
-        <Stack.Navigator initialRouteName='Home'>
-          <Stack.Screen name='Home' component={HomeScreen} />
-          <Stack.Screen name='ShopView' component={ShopView} />
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="ShopView" component={ShopView} />
         </Stack.Navigator>
       ) : (
         <Stack.Navigator>
-          <Stack.Screen name='Auth' component={Auth} />
+          <Stack.Screen name="Auth" component={Auth} />
         </Stack.Navigator>
       )}
     </AuthContext.Provider>

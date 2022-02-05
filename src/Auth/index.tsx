@@ -118,32 +118,32 @@ const Register = () => {
   return (
     <View>
       <TextInput
-        mode='flat'
-        label='Nombre'
+        mode="flat"
+        label="Nombre"
         error={errors.name ? true : false}
         onChangeText={(text) => setValue("name", text)}
       />
       <TextInput
-        mode='flat'
-        label='Apellido'
+        mode="flat"
+        label="Apellido"
         error={errors.lastname ? true : false}
         onChangeText={(text) => setValue("lastname", text)}
       />
       <TextInput
-        mode='flat'
-        label='Correo electronico'
+        mode="flat"
+        label="Correo electronico"
         error={errors.email ? true : false}
         onChangeText={(text) => setValue("email", text)}
       />
       <TextInput
-        mode='flat'
-        label='Contrasena'
+        mode="flat"
+        label="Contrasena"
         secureTextEntry={true}
         error={errors.password ? true : false}
         onChangeText={(text) => setValue("password", text)}
       />
       <View>
-        <Button mode='contained' onPress={handleSubmit(onSubmit)}>
+        <Button mode="contained" onPress={handleSubmit(onSubmit)}>
           {message}
         </Button>
       </View>
@@ -184,20 +184,20 @@ const Login = () => {
   return (
     <View>
       <TextInput
-        mode='flat'
-        label='Correo electronico'
+        mode="flat"
+        label="Correo electronico"
         error={errors.email ? true : false}
         onChangeText={(text) => setValue("email", text)}
       />
       <TextInput
-        mode='flat'
-        label='Contrasena'
+        mode="flat"
+        label="Contrasena"
         secureTextEntry={true}
         error={errors.password ? true : false}
         onChangeText={(text) => setValue("password", text)}
       />
       <View>
-        <Button mode='contained' onPress={handleSubmit(onSubmit)}>
+        <Button mode="contained" onPress={handleSubmit(onSubmit)}>
           {message}
         </Button>
       </View>
